@@ -1,21 +1,21 @@
-import { Resend } from "resend";
-import { NextResponse } from "next/server";
-import EmailTemplate from "@/emails";
+// import { Resend } from "resend";
+// import { NextResponse } from "next/server";
+// import EmailTemplate from "@/emails";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req) {
-  const response = await req.json();
-  const result = response.data;
-  try {
-    const data = await resend.emails.send({
-      from: "BA-Mens-Salon_Appointment_Booking@ba-mens.com",
-      to: [response.data.Email],
-      subject: "Appointment Booking Confirmation",
-      react: EmailTemplate({ result }),
-    });
-    return NextResponse.json({ data });
-  } catch (error) {
-    return NextResponse.json({ error });
-  }
-}
+// export async function POST(req) {
+//   const response = await req.json();
+//   const result = response.data;
+//   try {
+//     const data = await resend.emails.send({
+//       from: "BA-Mens-Salon_Appointment_Booking@ba-mens.com",
+//       to: [response.data.Email],
+//       subject: "Appointment Booking Confirmation",
+//       react: EmailTemplate({ result }),
+//     });
+//     return NextResponse.json({ data });
+//   } catch (error) {
+//     return NextResponse.json({ error });
+//   }
+// }
